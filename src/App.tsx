@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Search, Star, StarOff, Copy } from 'lucide-react';
-import memesData from './memes.json';
-import storage from './storage';
+import React, { useState, useEffect } from "react";
+import { Search, Star, StarOff, Copy } from "lucide-react";
+import memesData from "./memes.json";
+import storage from "./storage";
+import { LazyImage } from "./components/LazyImage";
 
 interface Meme {
   name: string;
@@ -11,11 +12,11 @@ interface Meme {
 function App() {
   const [memes] = useState<Meme[]>(memesData);
   const [favorites, setFavorites] = useState<string[]>([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     // Load favorites using the storage wrapper
-    storage.get('favorites').then((result) => {
+    storage.get("favorites").then((result) => {
       if (result.favorites) {
         setFavorites(result.favorites);
       }
@@ -26,17 +27,18 @@ function App() {
     const newFavorites = favorites.includes(memeName)
       ? favorites.filter((name) => name !== memeName)
       : [...favorites, memeName];
-    
+
     setFavorites(newFavorites);
-    
+
     // Save favorites using the storage wrapper
     storage.set({ favorites: newFavorites });
   };
 
   const copyToClipboard = (url: string, name: string) => {
     const markdownImage = `![${name}](${url})`;
-    navigator.clipboard.writeText(markdownImage)
-      .catch(err => console.error('Failed to copy:', err));
+    navigator.clipboard
+      .writeText(markdownImage)
+      .catch((err) => console.error("Failed to copy:", err));
   };
 
   const filteredMemes = memes.filter((meme) =>
@@ -64,7 +66,7 @@ function App() {
             key={meme.name}
             className="relative group bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
           >
-            <img
+            <LazyImage
               src={meme.link}
               alt={meme.name}
               className="w-full h-32 object-cover rounded-t-lg"

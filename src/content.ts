@@ -106,7 +106,7 @@ const memesData = [
   },
   {
     name: "/deletstar",
-    link: "https://raw.githubusercontent.com/ehsanpo/PRmemes/main/img/04f%20(1).jpg",
+    link: "https://raw.githubusercontent.com/ehsanpo/PRmemes/main/img/deletstar.jpg",
   },
   {
     name: "/didntreadbadger",
@@ -118,7 +118,7 @@ const memesData = [
   },
   {
     name: "/didntreadlol",
-    link: "https://raw.githubusercontent.com/ehsanpo/PRmemes/main/img/didntread.gif",
+    link: "https://raw.githubusercontent.com/ehsanpo/PRmemes/main/img/didntreadlol.gif",
   },
   {
     name: "/ditto",
@@ -158,7 +158,7 @@ const memesData = [
   },
   {
     name: "/forkit",
-    link: "https://raw.githubusercontent.com/ehsanpo/PRmemes/main/img/Q4A1648_1200_1200x.jpeg",
+    link: "https://raw.githubusercontent.com/ehsanpo/PRmemes/main/img/forkit.jpeg",
   },
   {
     name: "/fthis",
@@ -342,7 +342,7 @@ const memesData = [
   },
   {
     name: "/ping",
-    link: "https://raw.githubusercontent.com/ehsanpo/PRmemes/main/img/itunes-ping.jpeg",
+    link: "https://raw.githubusercontent.com/ehsanpo/PRmemes/main/img/ping.jpeg",
   },
   {
     name: "/pingballoons",
@@ -386,7 +386,7 @@ const memesData = [
   },
   {
     name: "/sevchicken",
-    link: "https://raw.githubusercontent.com/ehsanpo/PRmemes/main/img/buhgok.jpg",
+    link: "https://raw.githubusercontent.com/ehsanpo/PRmemes/main/img/sevchicken.jpg",
   },
   {
     name: "/shippingtime",
@@ -422,7 +422,7 @@ const memesData = [
   },
   {
     name: "/supercorn",
-    link: "https://raw.githubusercontent.com/ehsanpo/PRmemes/main/img/Supercorn.gif",
+    link: "https://raw.githubusercontent.com/ehsanpo/PRmemes/main/img/supercorn.gif",
   },
   {
     name: "/tables",
@@ -510,7 +510,7 @@ const memesData = [
   },
   {
     name: "/wrongnumber",
-    link: "https://raw.githubusercontent.com/ehsanpo/PRmemes/main/img/supahotfire.gif",
+    link: "https://raw.githubusercontent.com/ehsanpo/PRmemes/main/img/wrongnumber.gif",
   },
   {
     name: "/wtf",

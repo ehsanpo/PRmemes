@@ -79,7 +79,7 @@ function App() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 overflow-y-auto h-[calc(100%-60px)]">
+      <div className="grid grid-cols-2 gap-4 overflow-y-auto">
         {filteredMemes.map((meme) => (
           <div
             key={meme.name}

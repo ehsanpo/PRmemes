@@ -4,8 +4,6 @@
 
 A browser extension that lets you quickly add memes to your GitHub pull request reviews. Available for both Chrome and Firefox browsers.
 
-![PR Meme Reviewer](https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80)
-
 ## Features
 
 - 🖼️ Quick meme insertion in PR comments

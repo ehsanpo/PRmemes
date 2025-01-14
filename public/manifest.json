@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "PR Meme Reviewer",
+  "version": "1.0.0",
+  "description": "Add memes to your PR reviews",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["assets/content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  }
+}

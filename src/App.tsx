@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Search, Star, StarOff, Copy } from "lucide-react";
+import { Search, Star, StarOff, Copy, BookmarkCheck } from "lucide-react";
 import memesData from "./memes.json";
 import storage from "./storage";
 import { LazyImage } from "./components/LazyImage";
@@ -13,6 +13,7 @@ function App() {
   const [memes] = useState<Meme[]>(memesData);
   const [favorites, setFavorites] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
 
   useEffect(() => {
     // Load favorites using the storage wrapper
@@ -41,22 +42,40 @@ function App() {
       .catch((err) => console.error("Failed to copy:", err));
   };
 
-  const filteredMemes = memes.filter((meme) =>
-    meme.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredMemes = memes.filter((meme) => {
+    const matchesSearch = meme.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+    return showOnlyFavorites
+      ? matchesSearch && favorites.includes(meme.name)
+      : matchesSearch;
+  });
 
   return (
     <div className="w-[400px] h-[600px] bg-gray-50 p-4">
       <div className="mb-4">
-        <div className="relative">
-          <input
-            type="text"
-            placeholder="Search memes..."
-            className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <Search className="absolute left-3 top-2.5 text-gray-400 w-5 h-5" />
+        <div className="relative flex gap-2">
+          <div className="relative flex-1">
+            <input
+              type="text"
+              placeholder="Search memes..."
+              className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <Search className="absolute left-3 top-2.5 text-gray-400 w-5 h-5" />
+          </div>
+          <button
+            onClick={() => setShowOnlyFavorites(!showOnlyFavorites)}
+            className={`px-3 py-2 rounded-lg border transition-colors ${
+              showOnlyFavorites
+                ? "bg-yellow-50 border-yellow-200 text-yellow-600"
+                : "bg-white border-gray-200 text-gray-600 hover:bg-gray-50"
+            }`}
+            title={showOnlyFavorites ? "Show all memes" : "Show only favorites"}
+          >
+            <BookmarkCheck className="w-5 h-5" />
+          </button>
         </div>
       </div>
 
